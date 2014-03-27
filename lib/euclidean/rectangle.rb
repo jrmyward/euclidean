@@ -7,15 +7,15 @@ The {Rectangle} class cluster represents your typical arrangement of 4 corners a
 == Usage
 
 === Constructors
-    rect = Rectangle.new [1,2], [2,3]		    # Using two corners
-    rect = Rectangle.new from:[1,2], to:[2,3]	    # Using two corners
+    rect = Euclidean::Rectangle.new [1,2], [2,3]		    # Using two corners
+    rect = Euclidean::Rectangle.new from:[1,2], to:[2,3]	    # Using two corners
 
-    rect = Rectangle.new center:[1,2], size:[1,1]   # Using a center point and a size
-    rect = Rectangle.new origin:[1,2], size:[1,1]   # Using an origin point and a size
+    rect = Euclidean::Rectangle.new center:[1,2], size:[1,1]   # Using a center point and a size
+    rect = Euclidean::Rectangle.new origin:[1,2], size:[1,1]   # Using an origin point and a size
 
-    rect = Rectangle.new size: [10, 20]         # origin = [0,0], size = [10, 20]
-    rect = Rectangle.new size: Size[10, 20]	# origin = [0,0], size = [10, 20]
-    rect = Rectangle.new width: 10, height: 20	# origin = [0,0], size = [10, 20]
+    rect = Euclidean::Rectangle.new size: [10, 20]         # origin = [0,0], size = [10, 20]
+    rect = Euclidean::Rectangle.new size: Size[10, 20]	# origin = [0,0], size = [10, 20]
+    rect = Euclidean::Rectangle.new width: 10, height: 20	# origin = [0,0], size = [10, 20]
 =end
 
   class Rectangle
