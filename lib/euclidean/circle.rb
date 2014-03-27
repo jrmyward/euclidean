@@ -1,3 +1,5 @@
+require 'mathn'
+
 module Euclidean
 =begin rdoc
 Circles come in all shapes and sizes, but they're usually round.
@@ -11,6 +13,7 @@ Circles come in all shapes and sizes, but they're usually round.
 
   class Circle
     include ClusterFactory
+    include Comparable
 
     # @return [Point]   The {Circle}'s center point
     attr_reader :center
@@ -70,6 +73,16 @@ Circles come in all shapes and sizes, but they're usually round.
     #   @return [Numeric] The diameter of the {Circle}
     def diameter
       @radius*2
+    end
+
+    # Two circles intersect if, and only if, the distance between their centers is between the sum and the difference of their radii.
+    # Given two circles (x0,y0,R0) and (x1,y1,R1), the formula is as follows:
+    # (R0-R1)^2 <= (x0-x1)^2+(y0-y1)^2 <= (R0+R1)^2
+    # @param  [Circle] a {Circle} object
+    # @return [Boolean]
+    def intersects_circle?(other)
+      raise TypeError, "#{other.class} must be a #{self.class}" unless other.kind_of? Euclidean::Circle
+      ( (self.center.x - other.center.x)**2 + (self.center.y - other.center.y)**2  ).between?( ((self.radius - other.radius)**2), ((self.radius + other.radius)**2) )
     end
 
     # @return [Point]   The upper right corner of the bounding {Rectangle}
