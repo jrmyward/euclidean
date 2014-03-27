@@ -112,4 +112,37 @@ describe Euclidean::Circle do
     end
   end
 
+  describe "#intersects_circle?" do
+    let(:circle_1) { Circle.new [1, 2], 3}
+    let(:circle_2) { Circle.new [3, 0], 3}
+    let(:circle_3) { Circle.new [9, 0], 3}
+    let(:circle_4) { Circle.new diameter: 4 }
+
+    context "When two circles intersect" do
+      it "returns true" do
+        expect(circle_1.intersects_circle?(circle_2)).to be true
+      end
+    end
+
+    context "When two circles intersect at only one point" do
+      it "returns true" do
+        expect(circle_2.intersects_circle?(circle_3)).to be true
+      end
+    end
+
+    context "When two circles do not intersect" do
+      it "returns false" do
+        expect(circle_1.intersects_circle?(circle_3)).to be false
+      end
+    end
+
+    context "When compared to a non-circle" do
+      it "raises an error" do
+        rectangle = Rectangle.new([-1,0], [3,4])
+        expect{ circle_1.intersects_circle?(rectangle) }.to raise_error TypeError
+        expect{ circle_4.intersects_circle?(rectangle) }.to raise_error TypeError
+      end
+    end
+  end
+
 end
