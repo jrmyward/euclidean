@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "euclidean"
   spec.version       = Euclidean::VERSION
   spec.authors       = ["Jeremy Ward"]
-  spec.email         = ["jward@crowdcompass.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["jeremy.ward@digital-ocd.com"]
+  spec.summary       = %q{Basic Geometric primitives and algoritms for Ruby}
+  spec.description   = %q{Basic Geometric primitives and algoritms for Ruby}
+  spec.homepage      = "https://github.com/jrmyward/euclidean"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency 'rspec'
 end
