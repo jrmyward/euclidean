@@ -1,5 +1,3 @@
-require_relative 'point'
-
 module Euclidean
 =begin rdoc
 An object repesenting a {Point} at the origin in N-dimensional space

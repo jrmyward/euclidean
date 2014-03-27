@@ -1,8 +1,4 @@
-require_relative 'cluster_factory'
 require_relative 'edge'
-require_relative 'point'
-require_relative 'point_zero'
-require_relative 'size'
 
 module Euclidean
 =begin

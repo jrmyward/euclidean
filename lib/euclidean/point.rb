@@ -1,5 +1,4 @@
 require 'matrix'
-require_relative 'point_zero'
 
 module Euclidean
   DimensionMismatch = Class.new(StandardError)
